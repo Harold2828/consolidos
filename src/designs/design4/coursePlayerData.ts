@@ -19,10 +19,12 @@ export const playerCourse = {
   progressPercent: 38,
 } as const
 
+import { dashboardUser } from '../shared/dashboardData'
+
 export const playerUser = {
-  name: 'Ing. María López',
-  role: 'Estudiante',
-  initials: 'ML',
+  name: dashboardUser.name,
+  role: dashboardUser.role,
+  initials: dashboardUser.initials,
 } as const
 
 export const playerModules: Module[] = [
