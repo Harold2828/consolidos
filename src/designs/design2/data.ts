@@ -7,7 +7,7 @@ export type CourseArea =
   | 'ambiental'
   | 'urbanismo'
 
-export type CourseStatus = 'open' | 'soon'
+export type CourseStatus = 'open' | 'soon' | 'acquired' | 'in_progress'
 
 export type Course = {
   id: string
@@ -45,7 +45,7 @@ export const courses: Course[] = [
     hours: 18,
     instructor: 'Equipo estructuras',
     instructorRole: 'Magíster y especialista en estructuras',
-    status: 'soon',
+    status: 'acquired',
     excerpt:
       'Criterios de diseño, combinaciones de carga y documentación exigida en Colombia.',
   },
@@ -59,7 +59,7 @@ export const courses: Course[] = [
     hours: 14,
     instructor: 'Equipo geotecnia',
     instructorRole: 'Especialista en estructuras y suelos',
-    status: 'soon',
+    status: 'in_progress',
     excerpt: 'Estudios de suelo, zapatas y estabilidad con enfoque normativo local.',
   },
   {
@@ -155,5 +155,32 @@ export const instructors = [
     role: 'Presupuestos y programación',
     courses: 'APU y control de obra',
     modules: 'Gestión económica',
+  },
+] as const
+
+export const learningPaths = [
+  {
+    area: 'Estructuras',
+    title: 'Ruta de estructuras',
+    content:
+      'Aprenda a revisar criterios de diseño, cargas, memoria de cálculo y entregables técnicos para proyectos sometidos a revisión normativa.',
+  },
+  {
+    area: 'Geotecnia',
+    title: 'Ruta de geotecnia',
+    content:
+      'Organice estudios de suelo, cimentaciones, estabilidad y recomendaciones constructivas con enfoque práctico para licenciamiento.',
+  },
+  {
+    area: 'Construcción',
+    title: 'Ruta de construcción',
+    content:
+      'Conecte planos, cantidades, presupuesto, programación y control de obra para mejorar la trazabilidad del proyecto.',
+  },
+  {
+    area: 'BIM y documentación',
+    title: 'Ruta BIM y documentación',
+    content:
+      'Estructure modelos, capas, plantillas y entregables coordinados para equipos técnicos multidisciplinarios.',
   },
 ] as const

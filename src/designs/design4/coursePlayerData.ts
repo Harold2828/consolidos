@@ -31,10 +31,10 @@ export const playerModules: Module[] = [
     title: 'Módulo 1 · Entregables y normativa',
     lessons: [
       { id: 'l1-1', title: 'Bienvenida al curso', durationMin: 6, completed: true },
-      { id: 'l1-2', title: 'Qué exige la curaduría en Colombia', durationMin: 14, completed: true },
+      { id: 'l1-2', title: '¿Qué exige la curaduría en Colombia?', durationMin: 14, completed: true },
       {
         id: 'l1-3',
-        title: 'Checklist de planos antes del trámite',
+        title: 'Lista de verificación de planos antes del trámite',
         durationMin: 18,
         completed: false,
         current: true,

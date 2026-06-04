@@ -1,4 +1,4 @@
-# Consolidados S.A.S
+# Consolidos S.A.S
 
 Sitio web en React + Vite.
 

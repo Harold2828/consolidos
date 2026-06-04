@@ -15,7 +15,7 @@
   list-style: none;
   min-width: 10.5rem;
   border-radius: 12px;
-  background: rgba(0, 62, 156, 0.96);
+  background: rgba(var(--brand-primary-hover-rgb), 0.96);
   border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.45),
@@ -68,7 +68,7 @@
   padding: 0.65rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
-  background: rgba(0, 87, 217, 0.94);
+  background: rgba(var(--brand-primary-rgb), 0.94);
   color: #fff;
   font: inherit;
   font-size: 0.9rem;

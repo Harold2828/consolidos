@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 .design-3 {
-  --d3-bg: var(--brand-bg);
+  --d3-bg: #ffffff;
   --d3-surface: var(--brand-surface);
   --d3-ink: var(--brand-text);
   --d3-muted: var(--brand-text-muted);
@@ -67,10 +67,27 @@
   left: 0;
   right: 0;
   z-index: 100;
-  height: 4rem;
-  background: rgba(0, 62, 156, 0.96);
+  height: 5.25rem;
+  background: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 30px rgba(var(--brand-text-rgb), 0.06);
   backdrop-filter: blur(14px);
+  transform: translateY(0);
+  transition:
+    background 0.24s var(--d3-ease-out),
+    border-color 0.24s var(--d3-ease-out),
+    box-shadow 0.24s var(--d3-ease-out),
+    transform 0.24s var(--d3-ease-out);
+}
+
+.d3-header--top {
+  background: rgba(var(--brand-primary-hover-rgb), 0.96);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.d3-header--hidden {
+  transform: translateY(-100%);
 }
 
 .d3-header__inner {
@@ -82,8 +99,49 @@
 }
 
 .d3-header__brand img {
-  height: 36px;
+  height: 61px;
   width: auto;
+  transition: filter 0.24s var(--d3-ease-out), transform 0.24s var(--d3-ease-out);
+}
+
+.d3-header--top .d3-header__brand img {
+  filter: brightness(0) invert(1);
+}
+
+.d3-header__brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.55rem;
+  margin-left: -0.55rem;
+  border-radius: 8px;
+  transition:
+    background 0.24s var(--d3-ease-out),
+    box-shadow 0.24s var(--d3-ease-out),
+    transform 0.24s var(--d3-ease-out);
+}
+
+.d3-header__brand:hover,
+.d3-header__brand:focus-visible {
+  background: var(--d3-primary);
+  box-shadow: 0 12px 30px rgba(var(--brand-primary-rgb), 0.24);
+  transform: translateY(-1px);
+}
+
+.d3-header__brand:hover img,
+.d3-header__brand:focus-visible img {
+  filter: brightness(0) invert(1);
+  transform: scale(1.03);
+}
+
+.d3-header--top .d3-header__brand:hover,
+.d3-header--top .d3-header__brand:focus-visible {
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.18);
+}
+
+.d3-header--top .d3-header__brand:hover img,
+.d3-header--top .d3-header__brand:focus-visible img {
+  filter: none;
 }
 
 .d3-nav {
@@ -94,12 +152,26 @@
 }
 
 .d3-nav a {
-  color: rgba(248, 250, 252, 0.65);
+  color: var(--d3-muted);
   transition: color 0.2s var(--d3-ease-out);
 }
 
-.d3-nav a:hover {
+.d3-nav a:hover,
+.d3-nav a[aria-current='page'] {
   color: #fff;
+}
+
+.d3-header--light .d3-nav a:hover,
+.d3-header--light .d3-nav a[aria-current='page'] {
+  color: var(--d3-primary);
+}
+
+.d3-header--top .d3-nav a {
+  color: rgba(248, 250, 252, 0.72);
+}
+
+.d3-page-main {
+  padding-top: 7.4rem;
 }
 
 @media (min-width: 768px) {
@@ -111,6 +183,11 @@
 .d3-header__cta {
   display: none;
   white-space: nowrap;
+}
+
+.d3-header--top .d3-header__cta {
+  background: var(--d3-gold);
+  color: #fff;
 }
 
 @media (min-width: 560px) {
@@ -147,10 +224,21 @@
 .d3-btn--gold {
   background: var(--d3-gold);
   color: #fff;
+  -webkit-text-fill-color: #fff;
 }
 
 .d3-btn--gold:hover {
   background: var(--d3-gold-hover);
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
+
+.d3-btn--gold:disabled,
+.d3-header__cta,
+.d3-course__cta,
+.d3-offer__form .d3-btn--gold {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
 }
 
 .d3-btn--outline {
@@ -172,7 +260,7 @@
 /* Hero — escena parallax estilo Figma 3D */
 .d3-hero.d3-scene {
   position: relative;
-  padding: 5.5rem 0 4rem;
+  padding: 7.85rem 0 4rem;
   min-height: 100dvh;
   background: linear-gradient(
     165deg,
@@ -556,7 +644,7 @@
   height: 100%;
   background: var(--d3-surface);
   border: 1px solid var(--d3-line);
-  border-radius: 14px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 8px 28px rgba(var(--brand-text-rgb), 0.06);
   transition:
@@ -567,6 +655,10 @@
 .d3-course:hover {
   box-shadow: 0 16px 40px rgba(var(--brand-text-rgb), 0.1);
   transform: translateY(-3px);
+}
+
+.d3-course:hover .d3-course__thumb img {
+  transform: scale(1.08);
 }
 
 .d3-course--featured {
@@ -596,6 +688,7 @@
   height: 100%;
   min-height: 180px;
   object-fit: cover;
+  transition: transform 0.35s var(--d3-ease-out);
 }
 
 .d3-course__thumb::after {
@@ -624,6 +717,21 @@
 .d3-course__badge--open {
   background: #dcfce7;
   color: #166534;
+}
+
+.d3-course__badge--acquired {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.d3-course__badge--in_progress {
+  background: #ffedd5;
+  color: #7c2d12;
+}
+
+.d3-course__badge--soon {
+  background: rgba(var(--brand-text-rgb), 0.75);
+  color: #fff;
 }
 
 .d3-course__play {
@@ -672,6 +780,24 @@
   line-height: 1.55;
 }
 
+.d3-course__includes {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(var(--brand-primary-rgb), 0.12);
+  border-radius: 8px;
+  background: rgba(var(--brand-primary-rgb), 0.04);
+  color: var(--d3-muted);
+  font-size: 0.84rem;
+}
+
+.d3-course__includes strong {
+  color: var(--d3-ink);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .d3-course__meta {
   display: flex;
   flex-wrap: wrap;
@@ -704,6 +830,8 @@
 .d3-course__cta:disabled {
   opacity: 0.55;
   cursor: not-allowed;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
 }
 
 .d3-includes {
@@ -798,23 +926,29 @@
 }
 
 .d3-routes__areas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: grid;
+  gap: 0.75rem;
   margin: 0 0 1.5rem;
   padding: 0;
   list-style: none;
 }
 
 .d3-routes__areas li {
-  padding: 0.4rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+  font-size: 0.86rem;
   background: var(--d3-bg);
   border: 1px solid var(--d3-line);
-  border-radius: 6px;
+  border-radius: 8px;
+}
+
+.d3-routes__areas li strong {
+  color: var(--d3-primary);
+}
+
+.d3-routes__areas li span {
+  color: var(--d3-muted);
 }
 
 /* Manifesto (legacy) */
@@ -1174,6 +1308,11 @@
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+}
+
+.d3-footer img {
+  opacity: 0.9;
+  filter: brightness(0) invert(1);
 }
 
 .d3-footer p {

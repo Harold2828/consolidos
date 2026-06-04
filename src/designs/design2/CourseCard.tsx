@@ -1,4 +1,4 @@
-import { BookOpen, Clock, PlayCircle, Stack } from '@phosphor-icons/react'
+import { BookOpen, Clock, DownloadSimple, PlayCircle, Stack } from '@phosphor-icons/react'
 import { courseImage } from '../../utils/picsum'
 import type { Course } from './data'
 import './CourseCard.css'
@@ -6,6 +6,20 @@ import './CourseCard.css'
 type CourseCardProps = {
   course: Course
   featured?: boolean
+}
+
+const statusLabel: Record<Course['status'], string> = {
+  open: 'Inscripciones abiertas',
+  soon: 'Próximamente',
+  acquired: 'Adquirido',
+  in_progress: 'En curso',
+}
+
+const actionLabel: Record<Course['status'], string> = {
+  open: 'Ver programa',
+  soon: 'Avisarme',
+  acquired: 'Ir al curso',
+  in_progress: 'Continuar curso',
 }
 
 export function CourseCard({ course, featured = false }: CourseCardProps) {
@@ -29,13 +43,18 @@ export function CourseCard({ course, featured = false }: CourseCardProps) {
       <div className="d2-course__body">
         <div className="d2-course__meta-top">
           <span className={`d2-course__status d2-course__status--${course.status}`}>
-            {course.status === 'open' ? 'Inscripciones abiertas' : 'Próximamente'}
+            {statusLabel[course.status]}
           </span>
           <span className="d2-course__level">{course.level}</span>
         </div>
 
         <h3 className="d2-course__title">{course.title}</h3>
         <p className="d2-course__excerpt">{course.excerpt}</p>
+
+        <div className="d2-course__includes">
+          <strong>Incluye</strong>
+          <span>Video, material descargable, ejemplos aplicados y recursos por módulo.</span>
+        </div>
 
         <ul className="d2-course__facts" aria-label="Detalles del curso">
           <li>
@@ -50,6 +69,10 @@ export function CourseCard({ course, featured = false }: CourseCardProps) {
             <BookOpen size={16} weight="regular" aria-hidden />
             {course.instructorRole}
           </li>
+          <li>
+            <DownloadSimple size={16} weight="regular" aria-hidden />
+            Material por tema
+          </li>
         </ul>
 
         <div className="d2-course__footer">
@@ -61,7 +84,7 @@ export function CourseCard({ course, featured = false }: CourseCardProps) {
             className="d2-course__cta"
             disabled={course.status === 'soon'}
           >
-            {course.status === 'open' ? 'Ver programa' : 'Avisarme'}
+            {actionLabel[course.status]}
           </button>
         </div>
       </div>

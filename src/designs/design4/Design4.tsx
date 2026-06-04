@@ -73,7 +73,7 @@ export function Design4() {
                 <User size={22} weight="duotone" />
               </span>
               <div>
-                <p className="d4-profile__label">Tu progreso</p>
+                <p className="d4-profile__label">Su progreso</p>
                 <p className="d4-profile__percent">{playerCourse.progressPercent}%</p>
               </div>
             </div>
@@ -177,13 +177,14 @@ export function Design4() {
               </div>
             </div>
             <p className="d4-lesson-detail__desc">
-              Revise el checklist de capas, escalas y cuadro de revisiones antes de radicar en
-              curaduría. Incluye plantilla descargable alineada con práctica colombiana.
+              Revise la lista de verificación de capas, escalas y cuadro de revisiones
+              antes de radicar en curaduría. Incluye una plantilla descargable alineada
+              con la práctica colombiana.
             </p>
             <ul className="d4-resources">
               <li>
                 <DownloadSimple size={18} weight="duotone" aria-hidden />
-                Checklist_planos_curaduría.pdf
+                Lista_verificación_planos_curaduría.pdf
               </li>
               <li>
                 <DownloadSimple size={18} weight="duotone" aria-hidden />

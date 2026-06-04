@@ -3,7 +3,7 @@
 .design-2 {
   --d2-ink: var(--brand-text);
   --d2-muted: var(--brand-text-muted);
-  --d2-bg: var(--brand-bg);
+  --d2-bg: #ffffff;
   --d2-surface: var(--brand-surface);
   --d2-line: var(--brand-border);
   --d2-accent: var(--brand-primary);
@@ -59,13 +59,32 @@
 
 /* Header — fondo oscuro para logo blanco */
 .d2-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
-  height: 4rem;
-  background: rgba(0, 62, 156, 0.96);
+  height: 5.25rem;
+  background: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 30px rgba(var(--brand-text-rgb), 0.06);
   backdrop-filter: blur(12px);
+  transform: translateY(0);
+  transition:
+    background 0.24s var(--d2-ease-out),
+    border-color 0.24s var(--d2-ease-out),
+    box-shadow 0.24s var(--d2-ease-out),
+    transform 0.24s var(--d2-ease-out);
+}
+
+.d2-header--top {
+  background: rgba(var(--brand-primary-hover-rgb), 0.96);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.d2-header--hidden {
+  transform: translateY(-100%);
 }
 
 .d2-header__inner {
@@ -77,8 +96,49 @@
 }
 
 .d2-header__brand img {
-  height: 36px;
+  height: 61px;
   width: auto;
+  transition: filter 0.24s var(--d2-ease-out), transform 0.24s var(--d2-ease-out);
+}
+
+.d2-header--top .d2-header__brand img {
+  filter: brightness(0) invert(1);
+}
+
+.d2-header__brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.55rem;
+  margin-left: -0.55rem;
+  border-radius: 8px;
+  transition:
+    background 0.24s var(--d2-ease-out),
+    box-shadow 0.24s var(--d2-ease-out),
+    transform 0.24s var(--d2-ease-out);
+}
+
+.d2-header__brand:hover,
+.d2-header__brand:focus-visible {
+  background: var(--d2-accent);
+  box-shadow: 0 12px 30px rgba(var(--brand-primary-rgb), 0.24);
+  transform: translateY(-1px);
+}
+
+.d2-header__brand:hover img,
+.d2-header__brand:focus-visible img {
+  filter: brightness(0) invert(1);
+  transform: scale(1.03);
+}
+
+.d2-header--top .d2-header__brand:hover,
+.d2-header--top .d2-header__brand:focus-visible {
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.18);
+}
+
+.d2-header--top .d2-header__brand:hover img,
+.d2-header--top .d2-header__brand:focus-visible img {
+  filter: none;
 }
 
 .d2-nav {
@@ -89,12 +149,22 @@
 }
 
 .d2-nav a {
-  color: rgba(248, 250, 252, 0.65);
+  color: var(--d2-muted);
   transition: color 0.2s var(--d2-ease-out);
 }
 
-.d2-nav a:hover {
+.d2-nav a:hover,
+.d2-nav a[aria-current='page'] {
   color: #f8fafc;
+}
+
+.d2-header--light .d2-nav a:hover,
+.d2-header--light .d2-nav a[aria-current='page'] {
+  color: var(--d2-accent);
+}
+
+.d2-header--top .d2-nav a {
+  color: rgba(248, 250, 252, 0.72);
 }
 
 @media (min-width: 900px) {
@@ -106,6 +176,19 @@
 .d2-header__cta {
   display: none;
   white-space: nowrap;
+}
+
+.d2-header--top .d2-header__cta {
+  background: var(--d2-cta);
+  color: #fff;
+}
+
+.design-2--page .login-page,
+.design-2--page .d2-catalog,
+.design-2--page .d2-paths,
+.design-2--page .d2-instructors,
+.design-2--page .d2-cta {
+  padding-top: 7.4rem;
 }
 
 @media (min-width: 640px) {
@@ -182,8 +265,30 @@
   display: grid;
   gap: 2rem;
   min-height: min(100dvh, 720px);
-  padding: 5.5rem 0 3rem;
+  padding: 8.1rem 0 3rem;
   align-content: center;
+}
+
+.d2-material-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(var(--brand-primary-rgb), 0.14);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(var(--brand-text-rgb), 0.06);
+}
+
+.d2-material-strip strong {
+  color: var(--d2-ink);
+}
+
+.d2-material-strip span {
+  color: var(--d2-muted);
 }
 
 @media (min-width: 960px) {
@@ -191,7 +296,7 @@
     grid-template-columns: 1.15fr 0.85fr;
     align-items: end;
     gap: 2.5rem;
-    padding-top: 6rem;
+    padding-top: 8.1rem;
   }
 }
 
@@ -661,6 +766,7 @@
 
 .d2-footer img {
   opacity: 0.85;
+  filter: brightness(0) invert(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
