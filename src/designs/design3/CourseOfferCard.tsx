@@ -35,10 +35,6 @@ export function CourseOfferCard({ course, featured = false }: CourseOfferCardPro
         <p className="d3-course__area">{course.areaLabel}</p>
         <h3>{course.title}</h3>
         <p className="d3-course__excerpt">{course.excerpt}</p>
-        <div className="d3-course__includes">
-          <strong>Incluye</strong>
-          <span>Videos, guías descargables y recursos por módulo.</span>
-        </div>
         <ul className="d3-course__meta">
           <li>
             <Stack size={15} aria-hidden />

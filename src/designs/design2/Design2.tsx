@@ -66,7 +66,7 @@ export function Design2() {
             className="d2-header__brand"
             aria-label="Academia Consolidos"
           >
-            <Logo width={205} height={61} />
+            <Logo width={215} height={64} />
           </a>
           <nav className="d2-nav" aria-label="Principal">
             <a {...linkProps('/')}>Inicio</a>

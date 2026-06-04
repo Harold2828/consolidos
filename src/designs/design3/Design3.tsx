@@ -64,7 +64,7 @@ export function Design3() {
             className="d3-header__brand"
             aria-label="Consolidos Cursos"
           >
-            <Logo width={205} height={61} />
+            <Logo width={215} height={64} />
           </a>
           <nav className="d3-nav" aria-label="Principal">
             <a {...linkProps('/')}>Inicio</a>

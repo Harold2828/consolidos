@@ -82,15 +82,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 0;
+  padding: 0.4rem 0;
   gap: 1.5rem;
 }
 
 .design-1 .site-logo {
   display: inline-flex;
   align-items: center;
-  padding: 0.25rem 0.55rem;
-  margin-left: -0.55rem;
+  padding: 0.12rem 0.45rem;
+  margin-left: -0.45rem;
   border-radius: 8px;
   transition:
     background 0.25s,
@@ -112,7 +112,7 @@
 }
 
 .design-1 .site-logo img {
-  height: 64px;
+  height: 68px;
   width: auto;
   transition: filter 0.25s, transform 0.25s;
 }
@@ -176,7 +176,7 @@
 }
 
 .design-1 .page-main {
-  padding-top: 6.4rem;
+  padding-top: 6.15rem;
 }
 
 @media (min-width: 680px) {
@@ -186,7 +186,7 @@
 }
 
 .design-1 .hero {
-  padding: 8.3rem 0 5rem;
+  padding: 8rem 0 5rem;
   background: linear-gradient(
     165deg,
     rgba(var(--brand-primary-rgb), 0.08) 0%,
@@ -310,7 +310,7 @@
 
 .design-1 .section__title {
   margin: 0 0 0.5rem;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.7rem, 3.2vw, 2.25rem);
   color: var(--text);
 }
 
@@ -434,7 +434,7 @@
 .design-1 .course-preview h3,
 .design-1 .path-card h3 {
   margin: 0 0 0.5rem;
-  font-size: 1.05rem;
+  font-size: 1.16rem;
 }
 
 .design-1 .course-preview p,
@@ -475,7 +475,7 @@
 
 .design-1 .cta h2 {
   margin: 0 0 1rem;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(1.7rem, 3.2vw, 2.45rem);
 }
 
 .design-1 .cta p {

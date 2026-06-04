@@ -48,7 +48,7 @@ export function Design1() {
             className="site-logo"
             aria-label="Consolidos S.A.S. inicio"
           >
-            <Logo width={240} height={64} />
+            <Logo width={255} height={68} />
           </a>
           <nav className="site-nav" aria-label="Principal">
             <a {...linkProps('/')}>Inicio</a>

@@ -51,11 +51,6 @@ export function CourseCard({ course, featured = false }: CourseCardProps) {
         <h3 className="d2-course__title">{course.title}</h3>
         <p className="d2-course__excerpt">{course.excerpt}</p>
 
-        <div className="d2-course__includes">
-          <strong>Incluye</strong>
-          <span>Video, material descargable, ejemplos aplicados y recursos por módulo.</span>
-        </div>
-
         <ul className="d2-course__facts" aria-label="Detalles del curso">
           <li>
             <Stack size={16} weight="regular" aria-hidden />
