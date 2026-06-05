@@ -1,15 +1,12 @@
 import { useState } from 'react'
 import './FloatingDesignMenu.css'
 
-export type DesignOption = 1 | 2 | 3 | 4 | 5 | 6
+export type DesignOption = 1 | 2 | 3
 
 const designs: { id: DesignOption; label: string }[] = [
   { id: 1, label: 'Diseño 1' },
   { id: 2, label: 'Diseño 2' },
   { id: 3, label: 'Diseño 3' },
-  { id: 4, label: 'Reproductor' },
-  { id: 5, label: 'Mis cursos' },
-  { id: 6, label: 'Perfil' },
 ]
 
 type FloatingDesignMenuProps = {

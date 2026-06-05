@@ -19,6 +19,7 @@
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.6;
+  font-size: 1.04rem;
 }
 
 .design-1 *,
@@ -82,7 +83,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.4rem 0;
+  padding: 0.35rem 0;
   gap: 1.5rem;
 }
 
@@ -98,21 +99,27 @@
     transform 0.25s;
 }
 
+.design-1 .site-header--top .site-logo {
+  margin-left: -0.8rem;
+  transform: translate(-0.25rem, -0.08rem);
+}
+
 .design-1 .site-logo:hover,
 .design-1 .site-logo:focus-visible {
   background: var(--primary);
   box-shadow: 0 12px 30px rgba(var(--brand-primary-rgb), 0.24);
-  transform: translateY(-1px);
+  transform: translate(-0.35rem, -0.16rem) scale(1.02);
 }
 
 .design-1 .site-header--top .site-logo:hover,
 .design-1 .site-header--top .site-logo:focus-visible {
   background: #fff;
   box-shadow: 0 12px 30px rgba(255, 255, 255, 0.18);
+  transform: translate(-0.55rem, -0.2rem) scale(1.025);
 }
 
 .design-1 .site-logo img {
-  height: 68px;
+  height: 70px;
   width: auto;
   transition: filter 0.25s, transform 0.25s;
 }
@@ -135,7 +142,7 @@
 .design-1 .site-nav {
   display: flex;
   gap: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.96rem;
 }
 
 .design-1 .site-nav a {
@@ -166,7 +173,7 @@
   border-radius: 8px;
   background: var(--primary);
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 0.96rem;
   font-weight: 700;
 }
 
@@ -177,6 +184,12 @@
 
 .design-1 .page-main {
   padding-top: 6.15rem;
+}
+
+.design-1 .page-main:has(.login-page) {
+  height: 100svh;
+  overflow: hidden;
+  padding-top: 0;
 }
 
 @media (min-width: 680px) {
@@ -223,7 +236,7 @@
 .design-1 .hero h1 {
   margin: 0 0 1.25rem;
   line-height: 1.15;
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(2.18rem, 5vw, 3.45rem);
 }
 
 .design-1 .hero__lead {
@@ -310,7 +323,7 @@
 
 .design-1 .section__title {
   margin: 0 0 0.5rem;
-  font-size: clamp(1.7rem, 3.2vw, 2.25rem);
+  font-size: clamp(1.85rem, 3.3vw, 2.4rem);
   color: var(--text);
 }
 
@@ -502,7 +515,41 @@
 }
 
 @media (max-width: 640px) {
+  .design-1 .site-header__inner {
+    padding: 0.35rem 0;
+  }
+
+  .design-1 .site-logo {
+    padding-inline: 0.35rem;
+    margin-left: -0.35rem;
+  }
+
+  .design-1 .site-logo img {
+    height: clamp(52px, 14vw, 60px);
+    max-width: min(64vw, 240px);
+  }
+
   .design-1 .site-nav {
     display: none;
+  }
+
+  .design-1 .page-main {
+    padding-top: 5.5rem;
+  }
+
+  .design-1 .hero {
+    padding: 7.1rem 0 3.5rem;
+  }
+
+  .design-1 .hero h1 {
+    font-size: clamp(2rem, 11vw, 2.65rem);
+  }
+
+  .design-1 .section {
+    padding: 3rem 0;
+  }
+
+  .design-1 .section__title {
+    font-size: clamp(1.55rem, 8vw, 2rem);
   }
 }

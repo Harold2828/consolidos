@@ -1,8 +1,8 @@
 /* Paleta Consolidos — compartida por los tres demos */
 :root {
-  --brand-primary: #003da5;
-  --brand-primary-hover: #002f7f;
-  --brand-secondary: #2f6fd6;
+  --brand-primary: #234c86;
+  --brand-primary-hover: #173b6f;
+  --brand-secondary: #4f7dbb;
   --brand-accent: #ff8a00;
   --brand-accent-hover: #e67a00;
   --brand-bg: #f5f7fa;
@@ -10,9 +10,9 @@
   --brand-text: #1f2937;
   --brand-text-muted: #6b7280;
   --brand-border: #e5e7eb;
-  --brand-primary-rgb: 0, 61, 165;
-  --brand-primary-hover-rgb: 0, 47, 127;
-  --brand-secondary-rgb: 47, 111, 214;
+  --brand-primary-rgb: 35, 76, 134;
+  --brand-primary-hover-rgb: 23, 59, 111;
+  --brand-secondary-rgb: 79, 125, 187;
   --brand-accent-rgb: 255, 138, 0;
   --brand-text-rgb: 31, 41, 55;
 }

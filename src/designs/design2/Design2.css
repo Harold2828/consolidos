@@ -21,6 +21,7 @@
   color: var(--d2-ink);
   font-family: var(--d2-sans);
   line-height: 1.6;
+  font-size: 1.04rem;
 }
 
 .design-2 *,
@@ -96,7 +97,7 @@
 }
 
 .d2-header__brand img {
-  height: 64px;
+  height: 68px;
   width: auto;
   transition: filter 0.24s var(--d2-ease-out), transform 0.24s var(--d2-ease-out);
 }
@@ -117,11 +118,16 @@
     transform 0.24s var(--d2-ease-out);
 }
 
+.d2-header--top .d2-header__brand {
+  margin-left: -0.8rem;
+  transform: translate(-0.25rem, -0.08rem);
+}
+
 .d2-header__brand:hover,
 .d2-header__brand:focus-visible {
   background: var(--d2-accent);
   box-shadow: 0 12px 30px rgba(var(--brand-primary-rgb), 0.24);
-  transform: translateY(-1px);
+  transform: translate(-0.35rem, -0.16rem) scale(1.02);
 }
 
 .d2-header__brand:hover img,
@@ -134,6 +140,7 @@
 .d2-header--top .d2-header__brand:focus-visible {
   background: #fff;
   box-shadow: 0 12px 30px rgba(255, 255, 255, 0.18);
+  transform: translate(-0.55rem, -0.2rem) scale(1.025);
 }
 
 .d2-header--top .d2-header__brand:hover img,
@@ -144,7 +151,7 @@
 .d2-nav {
   display: none;
   gap: 1.35rem;
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -191,6 +198,12 @@
   padding-top: 7rem;
 }
 
+.design-2--page .login-page {
+  height: 100svh;
+  overflow: hidden;
+  padding-top: 5.25rem;
+}
+
 @media (min-width: 640px) {
   .d2-header__cta {
     display: inline-flex;
@@ -204,7 +217,7 @@
   justify-content: center;
   padding: 0.7rem 1.15rem;
   font-family: inherit;
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   font-weight: 600;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -312,7 +325,7 @@
 .d2-hero h1 {
   margin: 0 0 1rem;
   font-family: var(--d2-display);
-  font-size: clamp(2.15rem, 4.4vw, 3.2rem);
+  font-size: clamp(2.28rem, 4.6vw, 3.4rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -439,6 +452,45 @@
 }
 
 @media (max-width: 639px) {
+  .d2-header {
+    height: 4.5rem;
+  }
+
+  .d2-header__brand {
+    padding-inline: 0.35rem;
+    margin-left: -0.35rem;
+  }
+
+  .d2-header__brand img {
+    height: clamp(50px, 14vw, 56px);
+    max-width: min(64vw, 230px);
+  }
+
+  .design-2--page .login-page,
+  .design-2--page .d2-catalog,
+  .design-2--page .d2-paths,
+  .design-2--page .d2-instructors,
+  .design-2--page .d2-cta {
+    padding-top: 6.15rem;
+  }
+
+  .d2-hero__layout {
+    min-height: auto;
+    padding: 6.8rem 0 2.75rem;
+  }
+
+  .d2-hero h1 {
+    font-size: clamp(2rem, 11vw, 2.75rem);
+    max-width: 12ch;
+  }
+
+  .d2-catalog__head h2,
+  .d2-paths h2,
+  .d2-instructors h2,
+  .d2-cta h2 {
+    font-size: clamp(1.55rem, 8vw, 2rem);
+  }
+
   .d2-hero__proof li {
     flex: 1 1 calc(50% - 0.35rem);
   }
@@ -480,7 +532,7 @@
 .d2-catalog__head h2 {
   margin: 0 0 0.5rem;
   font-family: var(--d2-display);
-  font-size: clamp(1.7rem, 3.2vw, 2.25rem);
+  font-size: clamp(1.85rem, 3.3vw, 2.4rem);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
