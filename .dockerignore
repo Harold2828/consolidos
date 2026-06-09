@@ -1,0 +1,15 @@
+node_modules
+node_modules 2
+dist
+build
+.git
+.gitignore
+.DS_Store
+.vite
+.cache
+coverage
+logs
+*.log
+Dockerfile
+docker-compose.yml
+Makefile
