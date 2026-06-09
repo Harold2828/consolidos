@@ -55,6 +55,12 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.d4-topbar img {
+  width: auto;
+  height: 36px;
+  filter: brightness(0) invert(1);
+}
+
 .d4-topbar__left {
   display: flex;
   align-items: center;
@@ -133,7 +139,26 @@
 }
 
 @media (max-width: 640px) {
+  .d4-topbar {
+    grid-template-columns: 1fr auto;
+    min-height: var(--d4-topbar-h);
+    height: auto;
+    padding-block: 0.5rem;
+  }
+
+  .d4-topbar__left {
+    gap: 0.55rem;
+  }
+
+  .d4-topbar img {
+    height: 32px;
+  }
+
   .d4-topbar__course {
+    display: none;
+  }
+
+  .d4-topbar__divider {
     display: none;
   }
 }

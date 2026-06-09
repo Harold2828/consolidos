@@ -41,12 +41,12 @@ export function Design4() {
     <div className="design-4">
       <header className="d4-topbar">
         <div className="d4-topbar__left">
+          <Logo width={120} height={36} />
+          <span className="d4-topbar__divider" aria-hidden />
           <a href="#" className="d4-topbar__back">
             <CaretLeft size={18} weight="bold" aria-hidden />
             Mis cursos
           </a>
-          <span className="d4-topbar__divider" aria-hidden />
-          <Logo width={120} height={36} />
         </div>
         <p className="d4-topbar__course" title={playerCourse.title}>
           {playerCourse.title}

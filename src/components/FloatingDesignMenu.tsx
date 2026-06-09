@@ -1,13 +1,23 @@
 import { useState } from 'react'
 import './FloatingDesignMenu.css'
 
-export type DesignOption = 1 | 2 | 3
+export type DesignOption = 1 | 2 | 3 | 4 | 5 | 6
 
-const designs: { id: DesignOption; label: string }[] = [
+export const DEFAULT_DESIGN: DesignOption = 2
+export const DESIGN_STORAGE_KEY = 'consolidos-design'
+
+export const designs: { id: DesignOption; label: string }[] = [
   { id: 1, label: 'Diseño 1' },
   { id: 2, label: 'Diseño 2' },
   { id: 3, label: 'Diseño 3' },
+  { id: 4, label: 'Mis Cursos' },
+  { id: 5, label: 'Cursos inscritos' },
+  { id: 6, label: 'Perfil' },
 ]
+
+export function isDesignOption(value: number): value is DesignOption {
+  return designs.some((design) => design.id === value)
+}
 
 type FloatingDesignMenuProps = {
   value: DesignOption

@@ -3,7 +3,7 @@
   place-items: center;
   min-height: 100svh;
   height: 100svh;
-  padding: clamp(5.35rem, 10vh, 6.25rem) 1rem 1rem;
+  padding: 1rem;
   overflow: hidden;
   background: #fff;
   color: var(--brand-text);
@@ -99,6 +99,12 @@
 }
 
 @media (max-height: 720px) {
+  .login-page {
+    height: auto;
+    min-height: 100svh;
+    overflow-y: auto;
+  }
+
   .login-page__logo {
     height: 34px;
     margin-bottom: 0.8rem;

@@ -74,9 +74,17 @@ export function Design2() {
             <a {...linkProps('/cursos')}>Cursos</a>
             <a {...linkProps('/rutas')}>Rutas</a>
           </nav>
-          <a {...linkProps('/login')} className="d2-btn d2-btn--cta d2-header__cta">
-            Ingresar / registrarme
-          </a>
+          <div className="d2-header__auth" aria-label="Acceso de usuario">
+            <a {...linkProps('/login')} className="d2-btn d2-header__auth-link">
+              Ingresar
+            </a>
+            <a
+              {...linkProps('/login')}
+              className="d2-btn d2-header__auth-link d2-header__auth-link--primary"
+            >
+              Registrarme
+            </a>
+          </div>
         </div>
       </header>
 
